@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Menu, X, Search, ShoppingBag } from 'lucide-react';
 
 interface NavigationProps {
