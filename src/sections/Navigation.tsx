@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Search, ShoppingBag, Dumbbell } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   scrollY: number;

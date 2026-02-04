@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Clock, Users, Check, ArrowRight, Dumbbell } from 'lucide-react';
+import { Clock, Users, ArrowRight, Dumbbell } from 'lucide-react';
 
 interface Product {
   id: number;
