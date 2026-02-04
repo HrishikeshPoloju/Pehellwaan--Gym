@@ -32,7 +32,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
           <img
             src="/pehellwaan-logo.png"
             alt="Pehellwaan Gym Logo"
-            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:scale-110 transition-transform duration-300"
           />
           <span className={`font-bold text-lg tracking-tight transition-colors duration-300 ${isScrolled ? 'text-sage-dark' : 'text-white'
             }`}>

@@ -70,13 +70,13 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight transition-all duration-1000 custom-expo ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-            style={{ transitionDelay: '0.2s' }}
+            style={{ transitionDelay: '0.2s', fontFamily: '"Outfit", sans-serif' }}
           >
             Forge Your
             <br />
-            <span className="text-cyan-400">Legacy</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">Legacy</span>
           </h1>
 
           {/* Description */}

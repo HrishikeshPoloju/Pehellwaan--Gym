@@ -132,9 +132,8 @@ const Products = () => {
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Price Tag - Reveals on Hover */}
                   <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <span className="text-sage-dark font-bold text-lg">${product.price}</span>
+                    <span className="text-sage-dark font-bold text-lg">₹{product.price.toLocaleString()}</span>
                     <span className="text-muted-foreground text-sm">/mo</span>
                   </div>
                 </div>
@@ -166,7 +165,7 @@ const Products = () => {
                   {/* CTA */}
                   <div className="flex items-center justify-between">
                     <div className="text-sage-dark">
-                      <span className="text-3xl font-bold">${product.price}</span>
+                      <span className="text-3xl font-bold">₹{product.price.toLocaleString()}</span>
                       <span className="text-muted-foreground"> /mo</span>
                     </div>
                     <button className="px-6 py-3 bg-sage text-cream font-semibold rounded-full transition-all duration-300 hover:bg-sage-dark hover:shadow-lg transform group-hover:scale-105">
