@@ -17,7 +17,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
     { name: 'About', href: '#about' },
   ];
 
-  const isScrolled = scrollY > 50;
+  const isScrolled = scrollY > (typeof window !== 'undefined' ? window.innerHeight * 0.9 : 50);
 
   return (
     <nav

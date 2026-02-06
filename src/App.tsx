@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navigation from './sections/Navigation';
-import Hero from './sections/Hero';
+import ScrollHeroCanvas from './components/ScrollHeroCanvas';
 import Categories from './sections/Categories';
 import About from './sections/About';
 import Products from './sections/Products';
@@ -27,14 +27,16 @@ function App() {
     <div className="min-h-screen bg-cream overflow-x-hidden">
       <Navigation scrollY={scrollY} />
       <ReviewButton />
-      <Hero />
-      <Categories />
-      <About />
-      <Products />
-      <Destinations />
-      <Testimonials />
-      <CTA />
-      <Footer />
+      <ScrollHeroCanvas />
+      <div className="relative z-10 bg-cream">
+        <Categories />
+        <About />
+        <Products />
+        <Destinations />
+        <Testimonials />
+        <CTA />
+        <Footer />
+      </div>
     </div>
   );
 }
