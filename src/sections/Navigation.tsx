@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Search, ShoppingBag } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   scrollY: number;
@@ -7,7 +7,6 @@ interface NavigationProps {
 
 const Navigation = ({ scrollY }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [cartCount] = useState(0);
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
@@ -57,26 +56,22 @@ const Navigation = ({ scrollY }: NavigationProps) => {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button
-            className={`p-2 rounded-full transition-all duration-300 hover:bg-white/10 ${isScrolled ? 'text-sage-dark' : 'text-white'
-              }`}
-            aria-label="Search"
-          >
-            <Search className="w-5 h-5" />
-          </button>
 
-          <button
-            className={`p-2 rounded-full transition-all duration-300 hover:bg-white/10 relative ${isScrolled ? 'text-sage-dark' : 'text-white'
-              }`}
-            aria-label="Cart"
-          >
-            <ShoppingBag className="w-5 h-5" />
-            {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-brown text-cream text-xs rounded-full flex items-center justify-center font-bold">
-                {cartCount}
-              </span>
-            )}
-          </button>
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="#contact"
+              className={`text-sm font-semibold transition-colors duration-300 hover:opacity-80 ${isScrolled ? 'text-sage-dark' : 'text-white'}`}
+            >
+              Contact Us
+            </a>
+            <a
+              href="#join"
+              className="px-5 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-bold rounded-full shadow-lg hover:shadow-orange-500/20 hover:scale-105 transition-all duration-300"
+            >
+              Join Now
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -85,27 +80,44 @@ const Navigation = ({ scrollY }: NavigationProps) => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"
           >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 mt-2 nav-glass rounded-2xl overflow-hidden transition-all duration-300 custom-expo ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden absolute top-full left-0 right-0 mt-2 nav-glass rounded-2xl overflow-hidden transition-all duration-300 custom-expo ${isMenuOpen ? 'max-h-[500px] opacity-100 p-4' : 'max-h-0 opacity-0 p-0'
           }`}
       >
-        <div className="py-4 px-6 space-y-2">
+        <div className="flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block py-2 text-sage-dark font-medium hover:text-sage transition-colors"
+              className="block py-2 text-sage-dark font-medium hover:text-orange-600 transition-colors text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
+
+          <div className="h-px bg-gray-200/20 w-full" />
+
+          <a
+            href="#contact"
+            className="block py-2 text-sage-dark font-medium hover:text-orange-600 transition-colors text-center"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact Us
+          </a>
+          <a
+            href="#join"
+            className="block py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center font-bold rounded-full shadow-md active:scale-95 transition-all"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Join Now
+          </a>
         </div>
       </div>
     </nav>
