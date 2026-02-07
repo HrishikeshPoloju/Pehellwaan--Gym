@@ -96,7 +96,7 @@ export default function ScrollHeroCanvas() {
         <div ref={containerRef} className="relative w-full min-h-[100svh] overflow-hidden bg-black font-sans">
             <video
                 ref={videoRef}
-                className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
+                className="absolute top-0 left-0 w-full h-full object-cover"
                 src="/videos/veo-studio-creation.mp4"
                 autoPlay
                 loop
@@ -104,8 +104,8 @@ export default function ScrollHeroCanvas() {
                 playsInline
             />
 
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
+            {/* Overlay Gradient removed for brightness */}
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" /> */}
 
             {/* Cinematic Text Layer */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-20 pointer-events-none">
