@@ -33,7 +33,7 @@ export default function ScrollHeroCanvas() {
                 duration: 2,
                 ease: "power2.out",
                 filter: "blur(0px)",
-                onStart: () => gsap.set(text1Ref.current, { filter: "blur(10px)", scale: 0.9 })
+                onStart: () => { gsap.set(text1Ref.current, { filter: "blur(10px)", scale: 0.9 }) }
             })
                 .to(text1Ref.current, {
                     opacity: 0,
